@@ -1,0 +1,166 @@
+// Variables
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+$colors: (
+  primary: #023867,
+  primary-light: lighten(#023867, 40%),
+  accent: salmon,
+);
+
+$font-main: "Montserrat", sans-serif;
+$secondary-font: "Arial", sans-serif;
+
+$padding: 10px;
+$borders: 12px;
+
+$primary-color: map-get($colors, primary);
+$text-color: #333;
+$background-color: #f9f9f9;
+
+$tablet: 800px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: $font-main, $secondary-font;
+  background-color: $background-color;
+  line-height: 1.6;
+  color: $text-color;
+}
+
+#bg {
+  background-color: color(primary);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+
+  @include tablet {
+    clip-path: polygon(0 0, 82% 0, 50% 100%, 0% 100%);
+  }
+}
+
+header {
+  background-color: $primary-color;
+  color: #100c0c;
+  text-align: center;
+  padding: 2rem 0;
+
+  h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: color(accent);
+
+    @include tablet {
+      font-size: 3rem;
+    }
+  }
+}
+
+.photo {
+  display: block;
+  max-width: 200px;
+  border-radius: 10%;
+  margin: 2rem auto;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: "primary card";
+  }
+
+  section#primary {
+    grid-area: primary;
+    color: #fff;
+    padding: $padding;
+    text-align: center;
+
+    @include tablet {
+      text-align: left;
+      margin: 4em 0 0 4em;
+    }
+  }
+
+  section#card {
+    grid-area: card;
+    background: #fff;
+    padding: 20px;
+    margin: 1em auto;
+
+    @include tablet {
+      height: fit-content;
+      align-self: center;
+      margin: 1em;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        position: relative;
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        background-color: #fff;
+        //border: 1px solid #ddd;
+        border-radius: 4px;
+        color: color(accent);
+
+        span {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-color: color(primary);
+          border-radius: 50%;
+          left: -30px;
+        }
+
+        strong {
+          margin-left: 30px;
+        }
+      }
+    }
+  }
+
+  h2 {
+    color: color(primary);
+    margin-top: 2rem;
+    font-size: 1.75rem;
+    border-bottom: 2px solid color(primary);
+    padding-bottom: 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    color: $primary-color;
+  }
+}
+
+footer {
+  background-color: $text-color;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+
+  p {
+    margin: 0;
+  }
+}

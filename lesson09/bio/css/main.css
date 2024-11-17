@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Montserrat", sans-serif, "Arial", sans-serif;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  color: #333;
+}
+
+#bg {
+  background-color: #023867;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+@media (min-width: 800px) {
+  #bg {
+    -webkit-clip-path: polygon(0 0, 82% 0, 50% 100%, 0% 100%);
+            clip-path: polygon(0 0, 82% 0, 50% 100%, 0% 100%);
+  }
+}
+
+header {
+  background-color: #023867;
+  color: #100c0c;
+  text-align: center;
+  padding: 2rem 0;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: salmon;
+}
+@media (min-width: 800px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+
+.photo {
+  display: block;
+  max-width: 200px;
+  border-radius: 10%;
+  margin: 2rem auto;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+@media (min-width: 800px) {
+  main {
+    display: grid;
+    grid-template-columns: 50% auto;
+    grid-template-areas: "primary card";
+  }
+}
+main section#primary {
+  grid-area: primary;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+@media (min-width: 800px) {
+  main section#primary {
+    text-align: left;
+    margin: 4em 0 0 4em;
+  }
+}
+main section#card {
+  grid-area: card;
+  background: #fff;
+  padding: 20px;
+  margin: 1em auto;
+}
+@media (min-width: 800px) {
+  main section#card {
+    height: -moz-fit-content;
+    height: fit-content;
+    align-self: center;
+    margin: 1em;
+  }
+}
+main section#card ul {
+  list-style: none;
+  padding: 0;
+}
+main section#card ul li {
+  position: relative;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 4px;
+  color: salmon;
+}
+main section#card ul li span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #023867;
+  border-radius: 50%;
+  left: -30px;
+}
+main section#card ul li strong {
+  margin-left: 30px;
+}
+main h2 {
+  color: #023867;
+  margin-top: 2rem;
+  font-size: 1.75rem;
+  border-bottom: 2px solid #023867;
+  padding-bottom: 0.5rem;
+}
+main p {
+  margin-bottom: 1.5rem;
+  color: #023867;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+}
+footer p {
+  margin: 0;
+}/*# sourceMappingURL=main.css.map */
