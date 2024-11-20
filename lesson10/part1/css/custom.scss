@@ -1,0 +1,46 @@
+caption {
+  caption-side: top;
+}
+
+.table-dark {
+  --bs-table-bg: #0d6efd;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding-top: 1rem;
+    padding-top: 1rem;
+  }
+}
+
+header .btn {
+  background-color: salmon;
+  color: #000;
+  border-radius: 50px;
+  padding: 0.75rem 2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.rating i {
+  font-size: 1.5rem;
+  background: linear-gradient(
+    45deg,
+    #6b8eae,
+    #d6d6d6,
+    #ffc107
+  ); // Imitating blue merle coat tones
+  transition: transform 0.2s ease-in-out;
+}
+
+header {
+  background: linear-gradient(
+    45deg,
+    #d6d6d6,
+    #ffffff,
+    #ffc107
+  ); // Gray to white to gold gradient
+  color: #333; // Darker text for contrast
+  text-shadow: 0 1px 2px rgba(255, 215, 0, 0.5); // Gold text shadow for subtle effect
+  padding: 4rem 0; // Add vertical padding for spacing
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Add depth with shadow
+}
