@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+}
+
+.shape-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.shape-image {
+  width: 300px;
+  height: auto;
+  float: left;
+  shape-outside: circle(150px at 40% 50%);
+  clip-path: circle(150px at 40% 50%);
+}
+
+.shape-text {
+  text-align: justify;
+}
