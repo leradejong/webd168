@@ -19,7 +19,7 @@ html {
 @media (min-width: 800px) {
   #bg {
     -webkit-clip-path: polygon(0 0, 82% 0, 50% 100%, 0% 100%);
-            clip-path: polygon(0 0, 82% 0, 50% 100%, 0% 100%);
+    clip-path: polygon(0 0, 82% 0, 50% 100%, 0% 100%);
   }
 }
 
@@ -95,7 +95,7 @@ main section#card ul li {
   padding: 0.5rem;
   background-color: #fff;
   border-radius: 4px;
-  color: salmon;
+  color: rgb(114, 15, 4);
 }
 main section#card ul li span {
   position: absolute;
@@ -129,4 +129,4 @@ footer {
 }
 footer p {
   margin: 0;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
