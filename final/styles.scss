@@ -1,0 +1,202 @@
+// Variables for consistent color palette
+$primary-color: #000000;
+$secondary-color: #ffffff;
+$accent-color: #d4af37;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: $primary-color;
+  background: linear-gradient(
+    45deg,
+    rgb(224, 230, 190),
+    transparent,
+    rgb(179, 181, 119),
+    transparent
+  );
+  background-size: 200% 200%;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary-color;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.navbar {
+  background-color: $secondary-color;
+  border-bottom: 2px solid $accent-color;
+  .navbar-brand {
+    color: $primary-color;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .nav-link {
+    color: $primary-color;
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+.hero-section {
+  background-color: $accent-color;
+  color: $secondary-color;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.portfolio-section {
+  .card {
+    border: 1px solid $primary-color;
+    .card-title {
+      color: $primary-color;
+    }
+    .card-text {
+      color: $primary-color;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.contact-section {
+  form {
+    .form-control {
+      border: 1px solid $primary-color;
+    }
+    .btn-primary {
+      background-color: $accent-color;
+      border: none;
+      &:hover {
+        background-color: darken($accent-color, 10%);
+      }
+    }
+  }
+}
+
+.card-img-top {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.card-img-top:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+footer {
+  background-color: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+
+@include respond-to(mobile) {
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+  }
+  .portfolio-section {
+    .card {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@include respond-to(tablet) {
+  .portfolio-section {
+    .card {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// background animation
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 30%;
+  }
+  50% {
+    background-position: 70% 50%;
+  }
+  100% {
+    background-position: 0% 80%;
+  }
+}
+
+.photo {
+  width: 300px;
+  height: auto;
+  float: left;
+  margin-right: 20px;
+  // text wrap around photo
+  shape-outside: circle(150px at 40% 50%);
+  clip-path: circle(150px at 40% 50%);
+}
+
+.shape-text {
+  text-align: justify;
+}
+
+.photo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.question-card {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.question-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.question-card h5 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+}
+
+.question-answer {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.question-card:hover .question-answer {
+  opacity: 1;
+}
+
+.question-answer p {
+  margin: 0;
+}
